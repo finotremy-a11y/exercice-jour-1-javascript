@@ -1,6 +1,4 @@
-function traduireARN(arn) {
-
-const codons = {
+const proteine = {
   "UCU" : "Sérine",
   "UCC" : "Sérine",
   "UCA" : "Sérine",
@@ -25,15 +23,14 @@ const codons = {
   "UAC" : "Tyrosine"
 };
 
-const codonsArray = [];
+const arn = "UUACGCAGUAGA , CCGUCGUUGCGCUACAGC"
+const proteineArray = [];
 for (let i = 0; i < arn.length; i += 3) {
-  codonsArray.push(arn.slice(i, i + 3));
+  proteineArray.push(arn.slice(i, i + 3));
 };
 
-const proteine = codonsArray.map(codon => codons[codon]);
+const proteine = proteineArray.map(proteine => proteine[proteine]);
 
 const resultat = proteine.join("-");
 console.log(resultat);
-}
-traduireARN("CCGUCGUUGCGCUACAGC");
-traduireARN("CCUCGCCGGUACUUCUCG");
+
